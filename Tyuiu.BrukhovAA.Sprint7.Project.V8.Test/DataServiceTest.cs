@@ -31,5 +31,43 @@ namespace Tyuiu.BrukhovAA.Sprint7.Project.V8.Test
             string wait = "ТН-2 Петров Василий Ибрагимович 14.06.1982 12 65300 ;";
             Assert.AreEqual(wait, res);
         }
+        [TestMethod]
+        public void ValidAmountOfData()
+        {
+            int wait = 4;
+            int res = ds.amountOfData(ds.LoadFromFileData(filePath));
+            Assert.AreEqual(wait, res);
+        }
+        [TestMethod]
+        public void ValidAverageNumber()
+        {
+            string[,] DataBase = ds.LoadFromFileData(filePath);
+            double wait = 7;
+            bool switcher = false; 
+            double res = ds.AverageNumberPaymentOrAgeOfWork(DataBase, switcher);
+            Assert.AreEqual(wait, res);
+        }
+        [TestMethod]
+        public void ValidSumPayment()
+        {
+            double res = ds.SumOfPayment(ds.LoadFromFileData(filePath));
+            double wait = 200100;
+            Assert.AreEqual(wait, res);
+        }
+        [TestMethod]
+        public void ValidMaxPayment()
+        {
+            double res = ds.MaxPayment(ds.LoadFromFileData(filePath));
+            double wait = 65300;
+            Assert.AreEqual(wait, res);
+        }
+        [TestMethod]
+        public void ValidMinPayment()
+        {
+            double res = ds.MinPayment(ds.LoadFromFileData(filePath));
+            double wait = 40080;
+            Assert.AreEqual(wait, res);
+        }
+
     }
 }

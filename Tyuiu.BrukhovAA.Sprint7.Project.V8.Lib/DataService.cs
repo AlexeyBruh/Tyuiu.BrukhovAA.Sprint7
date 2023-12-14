@@ -48,9 +48,9 @@ namespace Tyuiu.BrukhovAA.Sprint7.Project.V8.Lib
                 person[r] = str + ";";
                 str = "";
             }
-            foreach(string p in person)
+            foreach (string p in person)
             {
-                if(p.Contains(SearchingData))
+                if (p.Contains(SearchingData))
                 {
                     res += p;
                 }
@@ -58,5 +58,73 @@ namespace Tyuiu.BrukhovAA.Sprint7.Project.V8.Lib
             }
             return res;
         }
+
+        public int amountOfData(string[,] DataBase)// метод, который возращает количество строк в БД
+        {
+            int count = DataBase.GetUpperBound(0) + 1;
+            return count;
+        }
+        public double AverageNumberPaymentOrAgeOfWork(string[,] DataBase, bool switcher)// метод, который вычисляет среднее число зарплаты сотрудников или возраста по выбору пользователя
+        {
+            int rows = DataBase.GetUpperBound(0) + 1;
+            double sumPayment = 0;
+            if(switcher == true)
+            {
+                for (int r = 0; r < rows; r++)
+                {
+                    sumPayment += Convert.ToInt32(DataBase[r, 6]);
+                }
+                double res = sumPayment / rows;
+                return Math.Round(res, 3);
+            }
+            else
+            {
+                for (int r = 0; r < rows; r++)
+                {
+                    sumPayment += Convert.ToInt32(DataBase[r, 5]);
+                }
+                double res = sumPayment / rows;
+                return Math.Round(res, 3);
+            }
+
+        }
+        public double SumOfPayment(string[,] DataBase)// метод, который вычисляет сумму зарплат сотрудников
+        {
+            int rows = DataBase.GetUpperBound(0) + 1;
+            double sumPayment = 0;
+            for (int r = 0; r < rows; r++)
+            {
+                sumPayment += Convert.ToInt32(DataBase[r, 6]);
+            }
+            return sumPayment;
+        }
+        public double MaxPayment(string[,] DataBase)//метод, который находит максимальную зарплату
+        {
+            int rows = DataBase.GetUpperBound(0) + 1;
+            double sumPayment = 0;
+            for (int r = 0; r < rows; r++)
+            {
+                if (Convert.ToInt32(DataBase[r, 6]) > sumPayment)
+                {
+                    sumPayment = Convert.ToInt32(DataBase[r, 6]);
+                }
+
+            }
+            return sumPayment;
+        }
+        public double MinPayment(string[,] DataBase)//метод, который находит минимальную зарплату
+        {
+            int rows = DataBase.GetUpperBound(0) + 1;
+            double sumPayment = Convert.ToInt32(DataBase[1, 6]);
+            for (int r = 0; r < rows; r++)
+            {
+                if (Convert.ToInt32(DataBase[r, 6]) < sumPayment)
+                {
+                    sumPayment = Convert.ToInt32(DataBase[r, 6]);
+                }
+            }
+            return sumPayment;
+        }
+        //Сделай переключатели и для остальных методов для пользователя по аналогии со средним числом!!!
     }
 }
