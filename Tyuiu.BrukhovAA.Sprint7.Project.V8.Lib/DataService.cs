@@ -64,7 +64,7 @@ namespace Tyuiu.BrukhovAA.Sprint7.Project.V8.Lib
             int count = DataBase.GetUpperBound(0) + 1;
             return count;
         }
-        public double AverageNumberPaymentOrAgeOfWork(string[,] DataBase, bool switcher)// метод, который вычисляет среднее число зарплаты сотрудников или возраста по выбору пользователя
+        public double AverageNumberPaymentOrAgeOfWork(string[,] DataBase, bool switcher)// метод, который вычисляет среднее число зарплаты сотрудников или стаж по выбору пользователя
         {
             int rows = DataBase.GetUpperBound(0) + 1;
             double sumPayment = 0;
@@ -98,33 +98,64 @@ namespace Tyuiu.BrukhovAA.Sprint7.Project.V8.Lib
             }
             return sumPayment;
         }
-        public double MaxPayment(string[,] DataBase)//метод, который находит максимальную зарплату
+        public double MaxPaymentOrAge(string[,] DataBase, bool switcher)//метод, который находит максимальную зарплату или максимальный стаж по выбору пользователя
         {
             int rows = DataBase.GetUpperBound(0) + 1;
             double sumPayment = 0;
-            for (int r = 0; r < rows; r++)
+            if (switcher == true)
             {
-                if (Convert.ToInt32(DataBase[r, 6]) > sumPayment)
+                for (int r = 0; r < rows; r++)
                 {
-                    sumPayment = Convert.ToInt32(DataBase[r, 6]);
-                }
+                    if (Convert.ToInt32(DataBase[r, 6]) > sumPayment)
+                    {
+                        sumPayment = Convert.ToInt32(DataBase[r, 6]);
+                    }
 
-            }
+                }
             return sumPayment;
+            }
+            else
+            {
+                for (int r = 0; r < rows; r++)
+                {
+                    if (Convert.ToInt32(DataBase[r, 5]) > sumPayment)
+                    {
+                        sumPayment = Convert.ToInt32(DataBase[r, 5]);
+                    }
+
+                }
+                return sumPayment;
+            }
+
         }
-        public double MinPayment(string[,] DataBase)//метод, который находит минимальную зарплату
+        public double MinPaymentOrAge(string[,] DataBase, bool switcher)//метод, который находит минимальную зарплату или минимальный стаж по выбору пользователя
         {
             int rows = DataBase.GetUpperBound(0) + 1;
-            double sumPayment = Convert.ToInt32(DataBase[1, 6]);
-            for (int r = 0; r < rows; r++)
+            if (switcher == true)
             {
-                if (Convert.ToInt32(DataBase[r, 6]) < sumPayment)
+                double sumPayment = Convert.ToInt32(DataBase[1, 6]);
+                for (int r = 0; r < rows; r++)
                 {
-                    sumPayment = Convert.ToInt32(DataBase[r, 6]);
+                    if (Convert.ToInt32(DataBase[r, 6]) < sumPayment)
+                    {
+                        sumPayment = Convert.ToInt32(DataBase[r, 6]);
+                    }
                 }
+                return sumPayment;
             }
-            return sumPayment;
+            else
+            {
+                double sumPayment = Convert.ToInt32(DataBase[1, 5]);
+                for (int r = 0; r < rows; r++)
+                {
+                    if (Convert.ToInt32(DataBase[r, 5]) < sumPayment)
+                    {
+                        sumPayment = Convert.ToInt32(DataBase[r, 5]);
+                    }
+                }
+                return sumPayment;
+            }
+
         }
-        //Сделай переключатели и для остальных методов для пользователя по аналогии со средним числом!!!
     }
 }

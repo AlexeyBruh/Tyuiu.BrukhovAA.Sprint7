@@ -57,15 +57,17 @@ namespace Tyuiu.BrukhovAA.Sprint7.Project.V8.Test
         [TestMethod]
         public void ValidMaxPayment()
         {
-            double res = ds.MaxPayment(ds.LoadFromFileData(filePath));
-            double wait = 65300;
+            bool switcher = false;
+            double res = ds.MaxPaymentOrAge(ds.LoadFromFileData(filePath), switcher);
+            double wait = 12;
             Assert.AreEqual(wait, res);
         }
         [TestMethod]
         public void ValidMinPayment()
         {
-            double res = ds.MinPayment(ds.LoadFromFileData(filePath));
-            double wait = 40080;
+            bool switcher = false;
+            double res = ds.MinPaymentOrAge(ds.LoadFromFileData(filePath), switcher);
+            double wait = 3;
             Assert.AreEqual(wait, res);
         }
 
