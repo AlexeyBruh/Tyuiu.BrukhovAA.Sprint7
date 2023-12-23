@@ -31,8 +31,6 @@ namespace Tyuiu.BrukhovAA.Sprint7.Project.V8
         {
             this.components = new System.ComponentModel.Container();
             this.toolTip_BAA = new System.Windows.Forms.ToolTip(this.components);
-            this.openFileDialog_BAA = new System.Windows.Forms.OpenFileDialog();
-            this.saveFileDialog_BAA = new System.Windows.Forms.SaveFileDialog();
             this.labelMainMenu_BAA = new System.Windows.Forms.Label();
             this.buttonHelp_BAA = new System.Windows.Forms.Button();
             this.buttonGuide_BAA = new System.Windows.Forms.Button();
@@ -48,7 +46,6 @@ namespace Tyuiu.BrukhovAA.Sprint7.Project.V8
             this.labelMainMenu_BAA.Size = new System.Drawing.Size(233, 41);
             this.labelMainMenu_BAA.TabIndex = 0;
             this.labelMainMenu_BAA.Text = "Главное меню\r\n";
-            this.labelMainMenu_BAA.Click += new System.EventHandler(this.labelMainMenu_BAA_Click);
             // 
             // buttonHelp_BAA
             // 
@@ -103,7 +100,6 @@ namespace Tyuiu.BrukhovAA.Sprint7.Project.V8
             this.Controls.Add(this.labelMainMenu_BAA);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "FormMain";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -115,8 +111,6 @@ namespace Tyuiu.BrukhovAA.Sprint7.Project.V8
         #endregion
 
         private System.Windows.Forms.ToolTip toolTip_BAA;
-        private System.Windows.Forms.OpenFileDialog openFileDialog_BAA;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog_BAA;
         private System.Windows.Forms.Label labelMainMenu_BAA;
         private System.Windows.Forms.Button buttonHelp_BAA;
         private System.Windows.Forms.Button buttonGuide_BAA;

@@ -17,11 +17,6 @@ namespace Tyuiu.BrukhovAA.Sprint7.Project.V8
             InitializeComponent();
         }
 
-        private void labelMainMenu_BAA_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonGuide_BAA_Click(object sender, EventArgs e)
         {
             FormGuide formGuide = new FormGuide();
@@ -30,8 +25,16 @@ namespace Tyuiu.BrukhovAA.Sprint7.Project.V8
 
         private void buttonStart_BAA_Click(object sender, EventArgs e)
         {
-            FormBaseData formBD = new FormBaseData();
-            formBD.ShowDialog();
+            try
+            {
+                FormBaseData formBD = new FormBaseData();
+                formBD.ShowDialog();
+            }
+            catch
+            {
+                MessageBox.Show("Значение в ячейке должно быть целочисленного типа для правильной сортировки", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void buttonHelp_BAA_Click(object sender, EventArgs e)

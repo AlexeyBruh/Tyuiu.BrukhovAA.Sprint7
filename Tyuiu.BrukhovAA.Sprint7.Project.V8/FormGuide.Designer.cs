@@ -40,7 +40,7 @@ namespace Tyuiu.BrukhovAA.Sprint7.Project.V8
             this.panelGuide_BAA.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelGuide_BAA.Location = new System.Drawing.Point(0, 0);
             this.panelGuide_BAA.Name = "panelGuide_BAA";
-            this.panelGuide_BAA.Size = new System.Drawing.Size(376, 503);
+            this.panelGuide_BAA.Size = new System.Drawing.Size(528, 776);
             this.panelGuide_BAA.TabIndex = 0;
             // 
             // textBoxGuide_BAA
@@ -51,7 +51,7 @@ namespace Tyuiu.BrukhovAA.Sprint7.Project.V8
             this.textBoxGuide_BAA.Name = "textBoxGuide_BAA";
             this.textBoxGuide_BAA.ReadOnly = true;
             this.textBoxGuide_BAA.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxGuide_BAA.Size = new System.Drawing.Size(376, 503);
+            this.textBoxGuide_BAA.Size = new System.Drawing.Size(528, 776);
             this.textBoxGuide_BAA.TabIndex = 0;
             // 
             // FormGuide
@@ -59,9 +59,10 @@ namespace Tyuiu.BrukhovAA.Sprint7.Project.V8
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(376, 503);
+            this.ClientSize = new System.Drawing.Size(528, 776);
             this.Controls.Add(this.panelGuide_BAA);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "FormGuide";
             this.Text = "Краткое руководство";
             this.panelGuide_BAA.ResumeLayout(false);
