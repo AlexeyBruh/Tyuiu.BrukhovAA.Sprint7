@@ -37,6 +37,11 @@ namespace Tyuiu.BrukhovAA.Sprint7.Project.V8
             this.buttonStart_BAA = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
+            // toolTip_BAA
+            // 
+            this.toolTip_BAA.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip_BAA.ToolTipTitle = "Подсказка";
+            // 
             // labelMainMenu_BAA
             // 
             this.labelMainMenu_BAA.AutoSize = true;
@@ -58,6 +63,7 @@ namespace Tyuiu.BrukhovAA.Sprint7.Project.V8
             this.buttonHelp_BAA.Size = new System.Drawing.Size(46, 42);
             this.buttonHelp_BAA.TabIndex = 1;
             this.buttonHelp_BAA.Text = "?";
+            this.toolTip_BAA.SetToolTip(this.buttonHelp_BAA, "О программе");
             this.buttonHelp_BAA.UseVisualStyleBackColor = false;
             this.buttonHelp_BAA.Click += new System.EventHandler(this.buttonHelp_BAA_Click);
             // 
@@ -72,6 +78,7 @@ namespace Tyuiu.BrukhovAA.Sprint7.Project.V8
             this.buttonGuide_BAA.Size = new System.Drawing.Size(150, 42);
             this.buttonGuide_BAA.TabIndex = 2;
             this.buttonGuide_BAA.Text = "Краткое руководство";
+            this.toolTip_BAA.SetToolTip(this.buttonGuide_BAA, "Открыть краткое руководство пользователя");
             this.buttonGuide_BAA.UseVisualStyleBackColor = false;
             this.buttonGuide_BAA.Click += new System.EventHandler(this.buttonGuide_BAA_Click);
             // 
