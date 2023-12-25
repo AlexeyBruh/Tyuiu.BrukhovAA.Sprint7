@@ -31,12 +31,20 @@ namespace Tyuiu.BrukhovAA.Sprint7.Project.V8
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBaseData));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelIndicators_BAA = new System.Windows.Forms.Panel();
-            this.groupBoxStatistic_BAA = new System.Windows.Forms.GroupBox();
+            this.groupBoxBottom_BAA = new System.Windows.Forms.GroupBox();
+            this.labelMinMaxP_BAA = new System.Windows.Forms.Label();
+            this.labelSumPay_BAA = new System.Windows.Forms.Label();
+            this.textBoxMinMaxP_BAA = new System.Windows.Forms.TextBox();
+            this.buttonStatistic_BAA = new System.Windows.Forms.Button();
+            this.labelAveragePay_BAA = new System.Windows.Forms.Label();
+            this.textBoxAverageAge_BAA = new System.Windows.Forms.TextBox();
+            this.textBoxSumPay_BAA = new System.Windows.Forms.TextBox();
+            this.textBoxAveragePay_BAA = new System.Windows.Forms.TextBox();
             this.panelSearch_BAA = new System.Windows.Forms.Panel();
             this.groupBoxTop_BAA = new System.Windows.Forms.GroupBox();
             this.groupBoxButtonsForData_BAA = new System.Windows.Forms.GroupBox();
@@ -60,34 +68,125 @@ namespace Tyuiu.BrukhovAA.Sprint7.Project.V8
             this.ColumnBirth = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnAges = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPayment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBoxMinMaxA_BAA = new System.Windows.Forms.TextBox();
+            this.labelAverageAge_BAA = new System.Windows.Forms.Label();
+            this.labelMinMaxA_BAA = new System.Windows.Forms.Label();
+            this.textBoxCount_BAA = new System.Windows.Forms.TextBox();
+            this.labelCount_BAA = new System.Windows.Forms.Label();
+            this.groupBoxStatistica_BAA = new System.Windows.Forms.GroupBox();
+            this.buttonGuide_BAA = new System.Windows.Forms.Button();
+            this.radioButtonMinMaxA_BAA = new System.Windows.Forms.RadioButton();
+            this.radioButtonMinMaxP_BAA = new System.Windows.Forms.RadioButton();
             this.panelIndicators_BAA.SuspendLayout();
+            this.groupBoxBottom_BAA.SuspendLayout();
             this.panelSearch_BAA.SuspendLayout();
             this.groupBoxTop_BAA.SuspendLayout();
             this.groupBoxButtonsForData_BAA.SuspendLayout();
             this.panelData_BAA.SuspendLayout();
             this.groupBoxData_BAA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewData_BAA)).BeginInit();
+            this.groupBoxStatistica_BAA.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelIndicators_BAA
             // 
             this.panelIndicators_BAA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelIndicators_BAA.Controls.Add(this.groupBoxStatistic_BAA);
+            this.panelIndicators_BAA.Controls.Add(this.groupBoxStatistica_BAA);
+            this.panelIndicators_BAA.Controls.Add(this.groupBoxBottom_BAA);
             this.panelIndicators_BAA.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelIndicators_BAA.Location = new System.Drawing.Point(0, 482);
             this.panelIndicators_BAA.Name = "panelIndicators_BAA";
             this.panelIndicators_BAA.Size = new System.Drawing.Size(884, 91);
             this.panelIndicators_BAA.TabIndex = 1;
             // 
-            // groupBoxStatistic_BAA
+            // groupBoxBottom_BAA
             // 
-            this.groupBoxStatistic_BAA.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxStatistic_BAA.Location = new System.Drawing.Point(0, 0);
-            this.groupBoxStatistic_BAA.Name = "groupBoxStatistic_BAA";
-            this.groupBoxStatistic_BAA.Size = new System.Drawing.Size(882, 89);
-            this.groupBoxStatistic_BAA.TabIndex = 0;
-            this.groupBoxStatistic_BAA.TabStop = false;
-            this.groupBoxStatistic_BAA.Text = "Статистика";
+            this.groupBoxBottom_BAA.Controls.Add(this.buttonGuide_BAA);
+            this.groupBoxBottom_BAA.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxBottom_BAA.Location = new System.Drawing.Point(0, 0);
+            this.groupBoxBottom_BAA.Name = "groupBoxBottom_BAA";
+            this.groupBoxBottom_BAA.Size = new System.Drawing.Size(882, 89);
+            this.groupBoxBottom_BAA.TabIndex = 0;
+            this.groupBoxBottom_BAA.TabStop = false;
+            // 
+            // labelMinMaxP_BAA
+            // 
+            this.labelMinMaxP_BAA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelMinMaxP_BAA.AutoSize = true;
+            this.labelMinMaxP_BAA.Location = new System.Drawing.Point(555, 50);
+            this.labelMinMaxP_BAA.Name = "labelMinMaxP_BAA";
+            this.labelMinMaxP_BAA.Size = new System.Drawing.Size(113, 13);
+            this.labelMinMaxP_BAA.TabIndex = 1;
+            this.labelMinMaxP_BAA.Text = "Минимальный оклад";
+            // 
+            // labelSumPay_BAA
+            // 
+            this.labelSumPay_BAA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelSumPay_BAA.AutoSize = true;
+            this.labelSumPay_BAA.Location = new System.Drawing.Point(443, 11);
+            this.labelSumPay_BAA.Name = "labelSumPay_BAA";
+            this.labelSumPay_BAA.Size = new System.Drawing.Size(86, 13);
+            this.labelSumPay_BAA.TabIndex = 1;
+            this.labelSumPay_BAA.Text = "Сумма окладов";
+            // 
+            // textBoxMinMaxP_BAA
+            // 
+            this.textBoxMinMaxP_BAA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxMinMaxP_BAA.Location = new System.Drawing.Point(558, 66);
+            this.textBoxMinMaxP_BAA.Name = "textBoxMinMaxP_BAA";
+            this.textBoxMinMaxP_BAA.ReadOnly = true;
+            this.textBoxMinMaxP_BAA.Size = new System.Drawing.Size(100, 20);
+            this.textBoxMinMaxP_BAA.TabIndex = 0;
+            // 
+            // buttonStatistic_BAA
+            // 
+            this.buttonStatistic_BAA.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonStatistic_BAA.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonStatistic_BAA.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonStatistic_BAA.Location = new System.Drawing.Point(6, 18);
+            this.buttonStatistic_BAA.Name = "buttonStatistic_BAA";
+            this.buttonStatistic_BAA.Size = new System.Drawing.Size(73, 65);
+            this.buttonStatistic_BAA.TabIndex = 3;
+            this.buttonStatistic_BAA.Text = "Заполнить";
+            this.buttonStatistic_BAA.UseVisualStyleBackColor = false;
+            this.buttonStatistic_BAA.Click += new System.EventHandler(this.buttonStatistic_BAA_Click);
+            // 
+            // labelAveragePay_BAA
+            // 
+            this.labelAveragePay_BAA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelAveragePay_BAA.AutoSize = true;
+            this.labelAveragePay_BAA.Location = new System.Drawing.Point(555, 11);
+            this.labelAveragePay_BAA.Name = "labelAveragePay_BAA";
+            this.labelAveragePay_BAA.Size = new System.Drawing.Size(83, 13);
+            this.labelAveragePay_BAA.TabIndex = 1;
+            this.labelAveragePay_BAA.Text = "Средний оклад";
+            // 
+            // textBoxAverageAge_BAA
+            // 
+            this.textBoxAverageAge_BAA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxAverageAge_BAA.Location = new System.Drawing.Point(285, 27);
+            this.textBoxAverageAge_BAA.Name = "textBoxAverageAge_BAA";
+            this.textBoxAverageAge_BAA.ReadOnly = true;
+            this.textBoxAverageAge_BAA.Size = new System.Drawing.Size(100, 20);
+            this.textBoxAverageAge_BAA.TabIndex = 0;
+            // 
+            // textBoxSumPay_BAA
+            // 
+            this.textBoxSumPay_BAA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxSumPay_BAA.Location = new System.Drawing.Point(446, 27);
+            this.textBoxSumPay_BAA.Name = "textBoxSumPay_BAA";
+            this.textBoxSumPay_BAA.ReadOnly = true;
+            this.textBoxSumPay_BAA.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSumPay_BAA.TabIndex = 0;
+            // 
+            // textBoxAveragePay_BAA
+            // 
+            this.textBoxAveragePay_BAA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxAveragePay_BAA.Location = new System.Drawing.Point(558, 27);
+            this.textBoxAveragePay_BAA.Name = "textBoxAveragePay_BAA";
+            this.textBoxAveragePay_BAA.ReadOnly = true;
+            this.textBoxAveragePay_BAA.Size = new System.Drawing.Size(100, 20);
+            this.textBoxAveragePay_BAA.TabIndex = 0;
             // 
             // panelSearch_BAA
             // 
@@ -113,7 +212,7 @@ namespace Tyuiu.BrukhovAA.Sprint7.Project.V8
             // 
             // groupBoxButtonsForData_BAA
             // 
-            this.groupBoxButtonsForData_BAA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxButtonsForData_BAA.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBoxButtonsForData_BAA.Controls.Add(this.buttonSearch_BAA);
             this.groupBoxButtonsForData_BAA.Controls.Add(this.labelSearch_BAA);
             this.groupBoxButtonsForData_BAA.Controls.Add(this.textBoxSearch_BAA);
@@ -245,12 +344,13 @@ namespace Tyuiu.BrukhovAA.Sprint7.Project.V8
             this.dataGridViewData_BAA.RowHeadersVisible = false;
             this.dataGridViewData_BAA.Size = new System.Drawing.Size(878, 377);
             this.dataGridViewData_BAA.TabIndex = 0;
+            this.dataGridViewData_BAA.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridViewData_BAA_EditingControlShowing);
+            this.dataGridViewData_BAA.SortCompare += new System.Windows.Forms.DataGridViewSortCompareEventHandler(this.dataGridViewData_BAA_SortCompare);
             // 
             // ColumnID
             // 
-            dataGridViewCellStyle9.Format = "N2";
-            dataGridViewCellStyle9.NullValue = null;
-            this.ColumnID.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle33.NullValue = null;
+            this.ColumnID.DefaultCellStyle = dataGridViewCellStyle33;
             this.ColumnID.HeaderText = "табельный номер";
             this.ColumnID.Name = "ColumnID";
             this.ColumnID.Width = 125;
@@ -275,28 +375,144 @@ namespace Tyuiu.BrukhovAA.Sprint7.Project.V8
             // 
             // ColumnBirth
             // 
-            dataGridViewCellStyle10.Format = "d";
-            dataGridViewCellStyle10.NullValue = null;
-            this.ColumnBirth.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle34.Format = "d";
+            dataGridViewCellStyle34.NullValue = null;
+            this.ColumnBirth.DefaultCellStyle = dataGridViewCellStyle34;
             this.ColumnBirth.HeaderText = "дата рождения";
             this.ColumnBirth.Name = "ColumnBirth";
             this.ColumnBirth.Width = 125;
             // 
             // ColumnAges
             // 
-            dataGridViewCellStyle11.NullValue = null;
-            this.ColumnAges.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle35.NullValue = null;
+            this.ColumnAges.DefaultCellStyle = dataGridViewCellStyle35;
             this.ColumnAges.HeaderText = "стаж";
             this.ColumnAges.Name = "ColumnAges";
             this.ColumnAges.Width = 125;
             // 
             // ColumnPayment
             // 
-            dataGridViewCellStyle12.NullValue = null;
-            this.ColumnPayment.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle36.NullValue = null;
+            this.ColumnPayment.DefaultCellStyle = dataGridViewCellStyle36;
             this.ColumnPayment.HeaderText = "оклад";
             this.ColumnPayment.Name = "ColumnPayment";
             this.ColumnPayment.Width = 125;
+            // 
+            // textBoxMinMaxA_BAA
+            // 
+            this.textBoxMinMaxA_BAA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxMinMaxA_BAA.Location = new System.Drawing.Point(285, 66);
+            this.textBoxMinMaxA_BAA.Name = "textBoxMinMaxA_BAA";
+            this.textBoxMinMaxA_BAA.ReadOnly = true;
+            this.textBoxMinMaxA_BAA.Size = new System.Drawing.Size(100, 20);
+            this.textBoxMinMaxA_BAA.TabIndex = 0;
+            // 
+            // labelAverageAge_BAA
+            // 
+            this.labelAverageAge_BAA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelAverageAge_BAA.AutoSize = true;
+            this.labelAverageAge_BAA.Location = new System.Drawing.Point(282, 11);
+            this.labelAverageAge_BAA.Name = "labelAverageAge_BAA";
+            this.labelAverageAge_BAA.Size = new System.Drawing.Size(78, 13);
+            this.labelAverageAge_BAA.TabIndex = 1;
+            this.labelAverageAge_BAA.Text = "Средний стаж";
+            // 
+            // labelMinMaxA_BAA
+            // 
+            this.labelMinMaxA_BAA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelMinMaxA_BAA.AutoSize = true;
+            this.labelMinMaxA_BAA.Location = new System.Drawing.Point(282, 50);
+            this.labelMinMaxA_BAA.Name = "labelMinMaxA_BAA";
+            this.labelMinMaxA_BAA.Size = new System.Drawing.Size(108, 13);
+            this.labelMinMaxA_BAA.TabIndex = 1;
+            this.labelMinMaxA_BAA.Text = "Минимальный стаж";
+            // 
+            // textBoxCount_BAA
+            // 
+            this.textBoxCount_BAA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxCount_BAA.Location = new System.Drawing.Point(109, 27);
+            this.textBoxCount_BAA.Name = "textBoxCount_BAA";
+            this.textBoxCount_BAA.ReadOnly = true;
+            this.textBoxCount_BAA.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCount_BAA.TabIndex = 0;
+            // 
+            // labelCount_BAA
+            // 
+            this.labelCount_BAA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelCount_BAA.AutoSize = true;
+            this.labelCount_BAA.Location = new System.Drawing.Point(106, 11);
+            this.labelCount_BAA.Name = "labelCount_BAA";
+            this.labelCount_BAA.Size = new System.Drawing.Size(122, 13);
+            this.labelCount_BAA.TabIndex = 1;
+            this.labelCount_BAA.Text = "Количество водителей";
+            // 
+            // groupBoxStatistica_BAA
+            // 
+            this.groupBoxStatistica_BAA.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.groupBoxStatistica_BAA.Controls.Add(this.radioButtonMinMaxP_BAA);
+            this.groupBoxStatistica_BAA.Controls.Add(this.radioButtonMinMaxA_BAA);
+            this.groupBoxStatistica_BAA.Controls.Add(this.textBoxCount_BAA);
+            this.groupBoxStatistica_BAA.Controls.Add(this.buttonStatistic_BAA);
+            this.groupBoxStatistica_BAA.Controls.Add(this.labelMinMaxP_BAA);
+            this.groupBoxStatistica_BAA.Controls.Add(this.labelCount_BAA);
+            this.groupBoxStatistica_BAA.Controls.Add(this.textBoxMinMaxP_BAA);
+            this.groupBoxStatistica_BAA.Controls.Add(this.labelSumPay_BAA);
+            this.groupBoxStatistica_BAA.Controls.Add(this.labelMinMaxA_BAA);
+            this.groupBoxStatistica_BAA.Controls.Add(this.labelAveragePay_BAA);
+            this.groupBoxStatistica_BAA.Controls.Add(this.textBoxAverageAge_BAA);
+            this.groupBoxStatistica_BAA.Controls.Add(this.textBoxAveragePay_BAA);
+            this.groupBoxStatistica_BAA.Controls.Add(this.labelAverageAge_BAA);
+            this.groupBoxStatistica_BAA.Controls.Add(this.textBoxMinMaxA_BAA);
+            this.groupBoxStatistica_BAA.Controls.Add(this.textBoxSumPay_BAA);
+            this.groupBoxStatistica_BAA.Location = new System.Drawing.Point(213, 0);
+            this.groupBoxStatistica_BAA.Name = "groupBoxStatistica_BAA";
+            this.groupBoxStatistica_BAA.Size = new System.Drawing.Size(670, 89);
+            this.groupBoxStatistica_BAA.TabIndex = 4;
+            this.groupBoxStatistica_BAA.TabStop = false;
+            this.groupBoxStatistica_BAA.Text = "Статистика";
+            // 
+            // buttonGuide_BAA
+            // 
+            this.buttonGuide_BAA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonGuide_BAA.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonGuide_BAA.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonGuide_BAA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGuide_BAA.Font = new System.Drawing.Font("Microsoft YaHei Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonGuide_BAA.Location = new System.Drawing.Point(6, 41);
+            this.buttonGuide_BAA.Name = "buttonGuide_BAA";
+            this.buttonGuide_BAA.Size = new System.Drawing.Size(159, 42);
+            this.buttonGuide_BAA.TabIndex = 4;
+            this.buttonGuide_BAA.Text = "Краткое руководство";
+            this.buttonGuide_BAA.UseVisualStyleBackColor = false;
+            this.buttonGuide_BAA.Click += new System.EventHandler(this.buttonGuide_BAA_Click);
+            // 
+            // radioButtonMinMaxA_BAA
+            // 
+            this.radioButtonMinMaxA_BAA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioButtonMinMaxA_BAA.AutoCheck = false;
+            this.radioButtonMinMaxA_BAA.AutoSize = true;
+            this.radioButtonMinMaxA_BAA.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radioButtonMinMaxA_BAA.Location = new System.Drawing.Point(265, 69);
+            this.radioButtonMinMaxA_BAA.Name = "radioButtonMinMaxA_BAA";
+            this.radioButtonMinMaxA_BAA.Size = new System.Drawing.Size(14, 13);
+            this.radioButtonMinMaxA_BAA.TabIndex = 4;
+            this.radioButtonMinMaxA_BAA.UseVisualStyleBackColor = true;
+            this.radioButtonMinMaxA_BAA.CheckedChanged += new System.EventHandler(this.radioButtonMinMaxA_BAA_CheckedChanged);
+            this.radioButtonMinMaxA_BAA.Click += new System.EventHandler(this.radioButtonMinMaxA_BAA_Click);
+            // 
+            // radioButtonMinMaxP_BAA
+            // 
+            this.radioButtonMinMaxP_BAA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioButtonMinMaxP_BAA.AutoCheck = false;
+            this.radioButtonMinMaxP_BAA.AutoSize = true;
+            this.radioButtonMinMaxP_BAA.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radioButtonMinMaxP_BAA.Location = new System.Drawing.Point(538, 69);
+            this.radioButtonMinMaxP_BAA.Name = "radioButtonMinMaxP_BAA";
+            this.radioButtonMinMaxP_BAA.Size = new System.Drawing.Size(14, 13);
+            this.radioButtonMinMaxP_BAA.TabIndex = 4;
+            this.radioButtonMinMaxP_BAA.UseVisualStyleBackColor = true;
+            this.radioButtonMinMaxP_BAA.CheckedChanged += new System.EventHandler(this.radioButtonMinMaxP_BAA_CheckedChanged);
+            this.radioButtonMinMaxP_BAA.Click += new System.EventHandler(this.radioButtonMinMaxP_BAA_Click);
             // 
             // FormBaseData
             // 
@@ -306,11 +522,12 @@ namespace Tyuiu.BrukhovAA.Sprint7.Project.V8
             this.Controls.Add(this.panelData_BAA);
             this.Controls.Add(this.panelSearch_BAA);
             this.Controls.Add(this.panelIndicators_BAA);
-            this.MinimumSize = new System.Drawing.Size(878, 476);
+            this.MinimumSize = new System.Drawing.Size(900, 612);
             this.Name = "FormBaseData";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panelIndicators_BAA.ResumeLayout(false);
+            this.groupBoxBottom_BAA.ResumeLayout(false);
             this.panelSearch_BAA.ResumeLayout(false);
             this.groupBoxTop_BAA.ResumeLayout(false);
             this.groupBoxButtonsForData_BAA.ResumeLayout(false);
@@ -318,13 +535,14 @@ namespace Tyuiu.BrukhovAA.Sprint7.Project.V8
             this.panelData_BAA.ResumeLayout(false);
             this.groupBoxData_BAA.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewData_BAA)).EndInit();
+            this.groupBoxStatistica_BAA.ResumeLayout(false);
+            this.groupBoxStatistica_BAA.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Panel panelIndicators_BAA;
-        private System.Windows.Forms.GroupBox groupBoxStatistic_BAA;
         private System.Windows.Forms.Panel panelSearch_BAA;
         private System.Windows.Forms.GroupBox groupBoxTop_BAA;
         private System.Windows.Forms.Button buttonOpenFile_BAA;
@@ -348,5 +566,23 @@ namespace Tyuiu.BrukhovAA.Sprint7.Project.V8
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnBirth;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnAges;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPayment;
+        private System.Windows.Forms.GroupBox groupBoxBottom_BAA;
+        private System.Windows.Forms.Label labelMinMaxP_BAA;
+        private System.Windows.Forms.Label labelSumPay_BAA;
+        private System.Windows.Forms.TextBox textBoxMinMaxP_BAA;
+        private System.Windows.Forms.Button buttonStatistic_BAA;
+        private System.Windows.Forms.Label labelAveragePay_BAA;
+        private System.Windows.Forms.TextBox textBoxAverageAge_BAA;
+        private System.Windows.Forms.TextBox textBoxSumPay_BAA;
+        private System.Windows.Forms.TextBox textBoxAveragePay_BAA;
+        private System.Windows.Forms.Label labelMinMaxA_BAA;
+        private System.Windows.Forms.Label labelAverageAge_BAA;
+        private System.Windows.Forms.TextBox textBoxMinMaxA_BAA;
+        private System.Windows.Forms.Label labelCount_BAA;
+        private System.Windows.Forms.TextBox textBoxCount_BAA;
+        private System.Windows.Forms.GroupBox groupBoxStatistica_BAA;
+        private System.Windows.Forms.Button buttonGuide_BAA;
+        private System.Windows.Forms.RadioButton radioButtonMinMaxP_BAA;
+        private System.Windows.Forms.RadioButton radioButtonMinMaxA_BAA;
     }
 }

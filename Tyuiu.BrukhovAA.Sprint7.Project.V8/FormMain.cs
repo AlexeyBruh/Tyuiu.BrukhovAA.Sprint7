@@ -32,7 +32,7 @@ namespace Tyuiu.BrukhovAA.Sprint7.Project.V8
             }
             catch
             {
-                MessageBox.Show("Значение в ячейке должно быть целочисленного типа для правильной сортировки", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               MessageBox.Show("Произошла ошибка", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -42,5 +42,6 @@ namespace Tyuiu.BrukhovAA.Sprint7.Project.V8
             FormAbout formAbout = new FormAbout();
             formAbout.ShowDialog();
         }
+        //Все готово, осталось дописать подсказки и краткое руководство !!!
     }
 }

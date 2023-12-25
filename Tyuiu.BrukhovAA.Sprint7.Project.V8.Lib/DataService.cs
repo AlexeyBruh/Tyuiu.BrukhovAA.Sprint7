@@ -32,41 +32,14 @@ namespace Tyuiu.BrukhovAA.Sprint7.Project.V8.Lib
 
             return DataBase;
         }
-        public string SearchForString(string[,] DataBase, string SearchingData)//метод, который возращает строку, если в ней находится искомое значение
-        {
-            int rows = DataBase.GetUpperBound(0) + 1;
-            int cols = DataBase.Length / rows;
-            string[] person = new string[rows];
-            string res = "";
-            string str = "";
-            for (int r = 0; r < rows; r++)
-            {
-                for (int c = 0; c < cols; c++)
-                {
-                    str += DataBase[r, c] + " ";
-                }
-                person[r] = str + ";";
-                str = "";
-            }
-            foreach (string p in person)
-            {
-                if (p.Contains(SearchingData))
-                {
-                    res += p;
-                }
-
-            }
-            return res;
-        }
 
         public int amountOfData(string[,] DataBase)// метод, который возращает количество строк в БД
         {
             int count = DataBase.GetUpperBound(0) + 1;
             return count;
         }
-        public double AverageNumberPaymentOrAgeOfWork(string[,] DataBase, bool switcher)// метод, который вычисляет среднее число зарплаты сотрудников или стаж по выбору пользователя
+        public double AverageNumberPaymentOrAgeOfWork(string[,] DataBase, bool switcher, int rows)// метод, который вычисляет среднее число зарплаты сотрудников или стаж по выбору пользователя
         {
-            int rows = DataBase.GetUpperBound(0) + 1;
             double sumPayment = 0;
             if(switcher == true)
             {
@@ -88,9 +61,8 @@ namespace Tyuiu.BrukhovAA.Sprint7.Project.V8.Lib
             }
 
         }
-        public double SumOfPayment(string[,] DataBase)// метод, который вычисляет сумму зарплат сотрудников
+        public double SumOfPayment(string[,] DataBase, int rows)// метод, который вычисляет сумму зарплат сотрудников
         {
-            int rows = DataBase.GetUpperBound(0) + 1;
             double sumPayment = 0;
             for (int r = 0; r < rows; r++)
             {
@@ -98,9 +70,8 @@ namespace Tyuiu.BrukhovAA.Sprint7.Project.V8.Lib
             }
             return sumPayment;
         }
-        public double MaxPaymentOrAge(string[,] DataBase, bool switcher)//метод, который находит максимальную зарплату или максимальный стаж по выбору пользователя
+        public double MaxPaymentOrAge(string[,] DataBase, bool switcher, int rows)//метод, который находит максимальную зарплату или максимальный стаж по выбору пользователя
         {
-            int rows = DataBase.GetUpperBound(0) + 1;
             double sumPayment = 0;
             if (switcher == true)
             {
@@ -128,9 +99,8 @@ namespace Tyuiu.BrukhovAA.Sprint7.Project.V8.Lib
             }
 
         }
-        public double MinPaymentOrAge(string[,] DataBase, bool switcher)//метод, который находит минимальную зарплату или минимальный стаж по выбору пользователя
+        public double MinPaymentOrAge(string[,] DataBase, bool switcher, int rows)//метод, который находит минимальную зарплату или минимальный стаж по выбору пользователя
         {
-            int rows = DataBase.GetUpperBound(0) + 1;
             if (switcher == true)
             {
                 double sumPayment = Convert.ToInt32(DataBase[1, 6]);

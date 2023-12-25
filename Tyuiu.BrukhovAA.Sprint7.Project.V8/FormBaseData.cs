@@ -22,9 +22,7 @@ namespace Tyuiu.BrukhovAA.Sprint7.Project.V8
         static string openFilePath;
         DataService ds = new DataService();
         static string[,] DataBase;
-
-
-        private void buttonOpenFile_BAA_Click(object sender, EventArgs e)
+        private void buttonOpenFile_BAA_Click(object sender, EventArgs e) //Кнопка открытия файла
         {
             try
             {
@@ -41,7 +39,7 @@ namespace Tyuiu.BrukhovAA.Sprint7.Project.V8
                 {
                     for (int c = 0; c < columns; c++)
                     { 
-                        if(int.TryParse(DataBase[r,c], out int n))
+                        if(double.TryParse(DataBase[r,c], out double n))
                         {
                             dataGridViewData_BAA.Rows[r].Cells[c].Value = n;
                         }
@@ -59,47 +57,54 @@ namespace Tyuiu.BrukhovAA.Sprint7.Project.V8
 }
 
 
-        private void buttonSaveFile_BAA_Click(object sender, EventArgs e)
+        private void buttonSaveFile_BAA_Click(object sender, EventArgs e)//кнопка сохранения, также ничего особенного
         {
-            saveFileDialog_BAA.FileName = "Водители.csv";
-            saveFileDialog_BAA.InitialDirectory = Directory.GetCurrentDirectory();
-            saveFileDialog_BAA.ShowDialog();
-
-            string path = saveFileDialog_BAA.FileName;
-
-            FileInfo fl = new FileInfo(path);
-            bool fileExists = fl.Exists;
-
-            if (fileExists)
+            try
             {
-                File.Delete(path);
-            }
+                saveFileDialog_BAA.FileName = "Водители.csv";
+                saveFileDialog_BAA.InitialDirectory = Directory.GetCurrentDirectory();
+                saveFileDialog_BAA.ShowDialog();
 
-            int rows = dataGridViewData_BAA.RowCount;
-            int columns = dataGridViewData_BAA.ColumnCount;
+                string path = saveFileDialog_BAA.FileName;
 
-            string str = "";
+                FileInfo fl = new FileInfo(path);
+                bool fileExists = fl.Exists;
 
-            for (int i = 0; i < rows; i++)
-            {
-                for (int j = 0; j < columns; j++)
+                if (fileExists)
                 {
-                    if (j != columns - 1)
-                    {
-                        str = str + dataGridViewData_BAA.Rows[i].Cells[j].Value + ";";
-                    }
-                    else
-                    {
-                        str = str + dataGridViewData_BAA.Rows[i].Cells[j].Value;
-                    }
+                    File.Delete(path);
                 }
-                File.AppendAllText(path, str + Environment.NewLine);
-                str = "";
+
+                int rows = dataGridViewData_BAA.RowCount;
+                int columns = dataGridViewData_BAA.ColumnCount;
+
+                string str = "";
+
+                for (int i = 0; i < rows; i++)
+                {
+                    for (int j = 0; j < columns; j++)
+                    {
+                        if (j != columns - 1)
+                        {
+                            str = str + dataGridViewData_BAA.Rows[i].Cells[j].Value + ";";
+                        }
+                        else
+                        {
+                            str = str + dataGridViewData_BAA.Rows[i].Cells[j].Value;
+                        }
+                    }
+                    File.AppendAllText(path, str + Environment.NewLine);
+                    str = "";
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
 
-        private void dataGridViewData_BAA_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        private void dataGridViewData_BAA_CellValueChanged(object sender, DataGridViewCellEventArgs e)//Событие, благодаря которому изменяя значения в DataGridView изменяются значения в массиве
         {
             try
             {
@@ -114,7 +119,7 @@ namespace Tyuiu.BrukhovAA.Sprint7.Project.V8
             }
         }
 
-        private void buttonAddRows_BAA_Click(object sender, EventArgs e)
+        private void buttonAddRows_BAA_Click(object sender, EventArgs e)//Кнопка, добавляющая строку в DataGridView
         {
             try
             {
@@ -127,7 +132,7 @@ namespace Tyuiu.BrukhovAA.Sprint7.Project.V8
 
         }
 
-        private void buttonDeleteRow_BAA_Click(object sender, EventArgs e)
+        private void buttonDeleteRow_BAA_Click(object sender, EventArgs e)//Кнопка, удаляющая последнюю строку в DataGridView
         {
             try
             {
@@ -135,11 +140,11 @@ namespace Tyuiu.BrukhovAA.Sprint7.Project.V8
             }
             catch
             {
-                MessageBox.Show("Произошла ошибка", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Таблица пуста", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void buttonSearch_BAA_Click(object sender, EventArgs e)
+        private void buttonSearch_BAA_Click(object sender, EventArgs e)//поиск
         {
             try
             {
@@ -159,7 +164,183 @@ namespace Tyuiu.BrukhovAA.Sprint7.Project.V8
                 MessageBox.Show("Строка не найдена", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void gvAppSummary_KeyPress(object sender, KeyPressEventArgs e)
+
+        private void dataGridViewData_BAA_SortCompare(object sender, DataGridViewSortCompareEventArgs e)//Ключевое событие для корректной сортировки
+        {
+            try
+            {
+                double a = double.Parse(e.CellValue1.ToString()), b = double.Parse(e.CellValue2.ToString());
+
+                e.SortResult = a.CompareTo(b);
+
+                e.Handled = true;
+            }
+            catch
+            {
+
+            }
+
+        }
+
+        private void buttonGuide_BAA_Click(object sender, EventArgs e)//открывает Краткое руководство пользователя
+        {
+            FormGuide formGuide = new FormGuide();
+            formGuide.ShowDialog();
+        }
+
+        private void buttonStatistic_BAA_Click(object sender, EventArgs e)//Реализует статистику
+        {
+            try
+            {
+                int rows = dataGridViewData_BAA.RowCount;
+                int columns = dataGridViewData_BAA.ColumnCount;
+
+                string[,] DataBaseStat = new string[rows, columns];
+
+                for (int i = 0; i < rows; i++)
+                {
+                    for (int j = 0; j < columns; j++)
+                    {
+                        DataBaseStat[i, j] = Convert.ToString(dataGridViewData_BAA.Rows[i].Cells[j].Value);
+                    }
+                }
+                textBoxCount_BAA.Text = Convert.ToString(ds.amountOfData(DataBaseStat));
+
+                bool Age = false;
+                bool Pay = true;
+                textBoxAverageAge_BAA.Text = Convert.ToString(ds.AverageNumberPaymentOrAgeOfWork(DataBaseStat, Age, rows));
+
+
+                textBoxAveragePay_BAA.Text = Convert.ToString(ds.AverageNumberPaymentOrAgeOfWork(DataBaseStat, Pay, rows));
+
+                labelMinMaxA_BAA.Text = "Минимальный стаж";
+                labelMinMaxP_BAA.Text = "Минимальный оклад";
+                radioButtonMinMaxA_BAA.Checked = false;
+                radioButtonMinMaxP_BAA.Checked = false;
+                textBoxMinMaxA_BAA.Text = Convert.ToString(ds.MinPaymentOrAge(DataBaseStat, Age, rows));
+                textBoxMinMaxP_BAA.Text = Convert.ToString(ds.MinPaymentOrAge(DataBaseStat, Pay, rows));
+
+                textBoxSumPay_BAA.Text = Convert.ToString(ds.SumOfPayment(DataBaseStat, rows));
+            }
+            catch
+            {
+                MessageBox.Show("Таблица пуста", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void radioButtonMinMaxA_BAA_CheckedChanged(object sender, EventArgs e)//Кнопка для стажа
+        {
+            try
+            {
+                int rows = dataGridViewData_BAA.RowCount;
+                int columns = dataGridViewData_BAA.ColumnCount;
+
+                string[,] DataBaseStat = new string[rows, columns];
+
+                for (int i = 0; i < rows; i++)
+                {
+                    for (int j = 0; j < columns; j++)
+                    {
+                        DataBaseStat[i, j] = Convert.ToString(dataGridViewData_BAA.Rows[i].Cells[j].Value);
+                    }
+                }
+                bool Age = false;
+
+                if (radioButtonMinMaxA_BAA.Checked)
+                {
+                    textBoxMinMaxA_BAA.Text = Convert.ToString(ds.MaxPaymentOrAge(DataBaseStat, Age, rows));
+                    labelMinMaxA_BAA.Text = "Максимальный стаж";
+                }
+                else
+                {
+                    textBoxMinMaxA_BAA.Text = Convert.ToString(ds.MinPaymentOrAge(DataBaseStat, Age, rows));
+                    labelMinMaxA_BAA.Text = "Минимальный стаж";
+                }
+
+            }
+            catch
+            {
+                MessageBox.Show("Таблица пуста", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void radioButtonMinMaxP_BAA_CheckedChanged(object sender, EventArgs e)//кнопка для оклада
+        {
+            try
+            {
+                int rows = dataGridViewData_BAA.RowCount;
+                int columns = dataGridViewData_BAA.ColumnCount;
+
+                string[,] DataBaseStat = new string[rows, columns];
+
+                for (int i = 0; i < rows; i++)
+                {
+                    for (int j = 0; j < columns; j++)
+                    {
+                        DataBaseStat[i, j] = Convert.ToString(dataGridViewData_BAA.Rows[i].Cells[j].Value);
+                    }
+                }
+                bool Pay = true;
+                if (radioButtonMinMaxP_BAA.Checked)
+                {
+                    textBoxMinMaxP_BAA.Text = Convert.ToString(ds.MaxPaymentOrAge(DataBaseStat, Pay, rows));
+                    labelMinMaxP_BAA.Text = "Максимальный оклад";
+                }
+                else
+                {
+                    textBoxMinMaxP_BAA.Text = Convert.ToString(ds.MinPaymentOrAge(DataBaseStat, Pay, rows));
+                    labelMinMaxP_BAA.Text = "Минимальный оклад";
+                }
+
+            }
+            catch
+            {
+                MessageBox.Show("Таблица пуста", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void radioButtonMinMaxA_BAA_Click(object sender, EventArgs e)//Событие, благодоря которому радио кнопки нажимаются отдельно, включаются и выключаются
+        {
+                switch (radioButtonMinMaxA_BAA.Checked)
+                {
+                    case true:
+                        radioButtonMinMaxA_BAA.Checked = false;
+                        break;
+                    case false:
+                        radioButtonMinMaxA_BAA.Checked = true;
+                        break;
+                }
+        }
+
+        private void radioButtonMinMaxP_BAA_Click(object sender, EventArgs e)//Событие, благодоря которому радио кнопки нажимаются отдельно, включаются и выключаются
+        {
+                switch (radioButtonMinMaxP_BAA.Checked)
+                {
+                    case true:
+                        radioButtonMinMaxP_BAA.Checked = false;
+                        break;
+                    case false:
+                        radioButtonMinMaxP_BAA.Checked = true;
+                        break;
+                }
+        }
+        private void dataGridViewData_BAA_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)//Событие, которое активирует другое событие при редактировании определенных столбцов
+        {
+            e.Control.KeyPress -= new KeyPressEventHandler(AnyColumnKeyPress);
+            if (dataGridViewData_BAA.CurrentCell.ColumnIndex == 0 || dataGridViewData_BAA.CurrentCell.ColumnIndex == 5 || dataGridViewData_BAA.CurrentCell.ColumnIndex == 6)
+            {
+                TextBox tb = e.Control as TextBox;
+                if (tb != null)
+                {
+                    tb.KeyPress += new KeyPressEventHandler(AnyColumnKeyPress);
+                }
+
+
+
+            }
+        }
+
+        private void AnyColumnKeyPress(object sender, KeyPressEventArgs e)//Событие, которое дает печатать только число
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
             {
